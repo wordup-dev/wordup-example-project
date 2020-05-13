@@ -1,0 +1,26 @@
+name: Publish to Wordup
+
+on:
+  push:
+    branches:
+    - master
+
+  # An alternative is to only run this workflow on a new release in GitHub
+  # release:
+  #   types: [published]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install -g wordup-cli
+    - run: wordup cloud:publish --env=release
+      env:
+        WORDUP_PROJECT_AUTH_TOKEN: ${{ secrets.WORDUP_PROJECT_AUTH_TOKEN }}
