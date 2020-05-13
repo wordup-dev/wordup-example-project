@@ -5,7 +5,7 @@ This is a basic WordPress theme project for Wordup. If you want to start with th
 
 ## Project setup
 
-To setup your development server, run the following command in your project folder:
+To set up your WordPress development server, run the following command in your project folder:
 
 ```sh
 $ wordup local:install
@@ -21,7 +21,7 @@ In your project you will find a folder called .wordup for the project specific c
 
 ## GitHub Actions
 
-You can setup an automatic CI workflow with GitHub Actions, so that your theme will be published automatically to your private WordPress theme/plugin directory on Wordup. 
+You can set up an automatic CI workflow with GitHub Actions, so that your theme will be published automatically to your private WordPress theme/plugin directory on Wordup. 
 
 Under `.github/workflows/wordup.yml` you can see the basic workflow. Don't forget to setup the corresponding secret `WORDUP_PROJECT_AUTH_TOKEN` in your GitHub settings of your repository.
 
